@@ -3,7 +3,7 @@ import axios from 'axios';
 import { useHistory } from 'react-router-dom'; 
 
 
-function Comments() {
+function Review() {
     // variables
 
     // functions
@@ -11,4 +11,5 @@ function Comments() {
     // return
 }
 
-export default Comments;
+export default Review;
+    
