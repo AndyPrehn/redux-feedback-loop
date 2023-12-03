@@ -96,8 +96,6 @@ function* rootSaga() {
     yield takeEvery('FETCH_FEEDBACK', fetchFeedback);
 }
 
-const sagaMiddleware = createSagaMiddleware();
-
 const reduxStore = createStore(
     combineReducers({
         name,
@@ -107,16 +105,13 @@ const reduxStore = createStore(
         comments,
         feedbackList,
     }),
-    applyMiddleware(sagaMiddleware, logger)
+    applyMiddleware( logger)
 );
-
-sagaMiddleware.run(rootSaga);
 
 const root = ReactDOM.createRoot(document.getElementById('root'));
 root.render(
     <React.StrictMode>
         <Provider store={reduxStore}>
-            <CssBaseline />
             <App />
         </Provider>
     </React.StrictMode>
