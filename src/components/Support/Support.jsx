@@ -1,15 +1,75 @@
-import React, { useState } from 'react';
-import axios from 'axios';
-import { useHistory } from 'react-router-dom'; 
+import { useHistory } from 'react-router-dom';
+import { useDispatch, useSelector } from "react-redux";
+import { useState } from "react";
 
+import BackButton from "../BackButton/BackButton";
 
 function Support() {
-    // variables
 
-    // functions
+    const history = useHistory();
 
-    // return
+    const storedSupport = useSelector(state => state.support);
+
+    // Support dispatch
+    const dispatch = useDispatch();
+    const [newSupport, setNewSupport] = useState(storedSupport || null);
+
+    // Function to handle click of 'Next' button
+    const handleClick = (e) => {
+
+        if (newSupport === null) {
+            swal({
+                text: 'Please select a support level!',
+                icon: 'warning'
+            });
+        } else {
+            e.preventDefault();
+            const action = { type: 'SUPPORT', payload: newSupport };
+            dispatch(action);
+            history.push(`/comments`);
+        }
+
+    };
+
+    const unclick = e => {
+        if (newSupport) {
+            setNewSupport(null);
+        }
+    };
+
+    return (
+        <Grid item xs={12} md={6}>
+            <Paper elevation={5}>
+                <Card>
+                    <CardContent>
+                        <Typography style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', justifyContent: 'center', height: '100%' }} variant="h5" component="div" sx={{ fontWeight: 'bold', mb: 2 }}>How well are you being supported?</Typography>
+                        <RadioGroup
+                            name='newSupport'
+                            value={newSupport}
+                            onChange={e => setNewSupport(e.target.value)}
+                            defaultValue={newSupport}
+                            row
+                            style={{ alignItems: 'center', justifyContent: 'center', height: '100%' }}
+                        >
+                            <FormControlLabel value={1} control={<Radio onClick={unclick} />} label='1' />
+                            <FormControlLabel value={2} control={<Radio onClick={unclick} />} label='2' />
+                            <FormControlLabel value={3} control={<Radio onClick={unclick} />} label='3' />
+                            <FormControlLabel value={4} control={<Radio onClick={unclick} />} label='4' />
+                            <FormControlLabel value={5} control={<Radio onClick={unclick} />} label='5' />
+                        </RadioGroup>
+                        <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
+                            <BackButton route={'/understanding'} />
+                            <Button variant="outlined"
+                                onClick={handleClick}
+                                style={{ backgroundColor: 'white', color: '#900021', borderColor: '#900021' }}
+                                endIcon={<ArrowForwardIcon />}>Next</Button>
+                        </div>
+                    </CardContent>
+                </Card>
+            </Paper>
+        </Grid>
+    )
+
 }
 
 export default Support;
-    
