@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
 import BackButton from "../BackButton/BackButton";
+import { Button, TextField, Grid, Paper, Card, CardContent, Typography } from "@mui/material";
 
 
 
@@ -62,7 +63,7 @@ function Name() {
                                 <BackButton route={'/'} />
                                 <Button variant="outlined"
                                     onClick={handleClick}
-                                    endIcon={<ArrowForwardIcon />}>Next</Button>
+                                    endIcon>Next</Button>
                             </div>
                         </CardContent>
                     </Card>

@@ -1,5 +1,5 @@
 import BackButton from '../BackButton/BackButton';
-
+import { Button, TextField, Grid, Paper, Card, CardContent, Typography } from "@mui/material";
 import NextButton from '../NextButton/NextButton';
 import { useSelector, useDispatch } from 'react-redux';
 import { useHistory } from 'react-router-dom';
@@ -21,7 +21,7 @@ function Comments() {
         e.preventDefault();
         const action = { type: 'COMMENTS', payload: newComments };
         dispatch(action);
-        history.push('/submission');
+        history.push('/review');
 
     };
 
@@ -45,7 +45,7 @@ function Comments() {
                             <Button variant="outlined"
                                 style={{ backgroundColor: 'white', color: '#900021', borderColor: '#900021' }}
                                 onClick={handleClick}
-                                endIcon={<ArrowForwardIcon />}>Next</Button>
+                                endIcon>Next</Button>
                         </div>
                     </CardContent>
                 </Card>

@@ -1,5 +1,5 @@
 import { useHistory } from 'react-router-dom';
-
+import { Button, Paper, Typography, Grid, Card, CardContent } from "@mui/material";
 
 function Home() {
 
@@ -15,7 +15,7 @@ function Home() {
                         <Button variant="outlined"
                             style={{ backgroundColor: 'white', color: '#900021', borderColor: '#900021' }}
                             onClick={e => history.push('/name')}
-                            endIcon={<ArrowForwardIcon />}>Start survey</Button>
+                            endIcon>Start survey</Button>
                     </CardContent>
                 </Card>
             </Paper>

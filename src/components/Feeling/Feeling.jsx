@@ -1,7 +1,8 @@
 import { useSelector, useDispatch } from 'react-redux';
 import { useState } from "react";
 import { useHistory } from 'react-router-dom';
-
+import BackButton from '../BackButton/BackButton';
+import { Button, FormControlLabel, Radio, RadioGroup, Grid, Paper, Card, CardContent, Typography } from "@mui/material";
 
 function Feeling() {
 
@@ -17,6 +18,7 @@ function Feeling() {
 
     // Function to handle click of 'Next' button
     const handleClick = (e) => {
+        
 
         if (newFeeling === null) {
             swal({
@@ -67,7 +69,7 @@ function Feeling() {
                                 <Button variant="outlined"
                                     style={{ backgroundColor: 'white', color: '#900021', borderColor: '#900021' }}
                                     onClick={handleClick}
-                                    endIcon={<ArrowForwardIcon />}>Next</Button>
+                                    endIcon>Next</Button>
                             </div>
                         </CardContent>
                     </Card>

@@ -8,6 +8,7 @@ import Comments from '../Comments/Comments';
 import Review from '../Review/Review';
 import Home from '../Home/home';
 import Name from '../Name/Name';
+import { Grid, Paper, Card, CardContent } from '@mui/material';
 import FeedbackList from '../FeedbackList/feedbackList';
 
 function App() {

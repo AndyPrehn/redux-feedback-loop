@@ -3,6 +3,7 @@ import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
 import BackButton from "../BackButton/BackButton";
 import { useEffect, useState } from "react";
+import { Button, CardContent, Card, Paper, Grid, Typography } from "@mui/material";
 
 function Review() {
 
@@ -55,7 +56,7 @@ function Review() {
                             <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-end' }}>
                                 <BackButton route={'/comments'} />
                                 <Button variant="outlined"
-                                    onClick={handleSubmit} startIcon={<ThumbUpIcon />}>Submit feedback</Button>
+                                    onClick={handleSubmit} startIcon>Submit feedback</Button>
                             </div>
             </Grid>
         </>

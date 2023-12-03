@@ -1,7 +1,7 @@
 import { useHistory } from 'react-router-dom';
 import { useDispatch, useSelector } from "react-redux";
 import { useState } from "react";
-
+import { Button, FormControlLabel, Radio, RadioGroup, Grid, Paper, Card, CardContent, Typography } from "@mui/material";
 import BackButton from "../BackButton/BackButton";
 
 function Support() {
@@ -62,7 +62,7 @@ function Support() {
                             <Button variant="outlined"
                                 onClick={handleClick}
                                 style={{ backgroundColor: 'white', color: '#900021', borderColor: '#900021' }}
-                                endIcon={<ArrowForwardIcon />}>Next</Button>
+                                endIcon>Next</Button>
                         </div>
                     </CardContent>
                 </Card>

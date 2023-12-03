@@ -5,6 +5,8 @@ import App from './components/App/App';
 import { Provider } from 'react-redux';
 import { applyMiddleware, combineReducers, createStore } from 'redux';
 import logger from 'redux-logger';
+import { CssBaseline } from '@mui/material';
+import '@fontsource/roboto';
 
 
 const name = (state = null, action) => {

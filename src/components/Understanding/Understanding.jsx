@@ -3,6 +3,7 @@ import { useState } from "react";
 import { useDispatch, useSelector } from "react-redux";
 import { useHistory } from 'react-router-dom';
 import BackButton from "../BackButton/BackButton";
+import { Button, FormControlLabel, Radio, RadioGroup, Grid, Paper, Card, CardContent, Typography } from "@mui/material";
 
 function Understanding() {
 
@@ -63,7 +64,7 @@ function Understanding() {
                             <Button variant="outlined"
                                 style={{ backgroundColor: 'white', color: '#900021', borderColor: '#900021' }}
                                 onClick={handleClick}
-                                endIcon={<ArrowForwardIcon />}>Next</Button>
+                                endIcon>Next</Button>
                         </div>
                     </CardContent>
                 </Card>
