@@ -83,6 +83,7 @@ const feedbackList = (state = [], action) => {
 function* fetchFeedback() {
 
     try {
+        console.log('Andy');
         const response = yield axios.get('/feedback');
         const action = { type: 'SET_FEEDBACK', payload: response.data };
         yield put(action);
